@@ -38,3 +38,23 @@
 // else if( scoreDolphins === scoreKaolas){
 // console.log('Both win the trophy');
 // }
+
+const bill = 275;
+
+/* Write your code below. Good luck! 🙂 */
+
+// if(bill >= 50 && <= 300){
+//    const  tip = (15/100) * bill;
+// }else
+// {
+//     tip = (20/100) * bill;
+// }
+
+// const totalValue = tip + bill;
+// console.log(tip);
+// console.log(totalValue);
+
+const tip = bill >= 50 && bill <= 300 ? (15/100) * bill : (20/100) * bill;
+const totalValue = tip + bill;
+ console.log(tip);
+ console.log(totalValue);
