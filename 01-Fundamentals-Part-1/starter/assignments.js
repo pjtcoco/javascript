@@ -51,10 +51,11 @@ const bill = 275;
 // }
 
 // const totalValue = tip + bill;
-// console.log(tip);
-// console.log(totalValue);
+// const totalValue = tip + bill;
+//  console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${totalValue}`);
 
-const tip = bill >= 50 && bill <= 300 ? (15/100) * bill : (20/100) * bill;
+const tip = bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
 const totalValue = tip + bill;
- console.log(tip);
- console.log(totalValue);
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${totalValue}`
+);
