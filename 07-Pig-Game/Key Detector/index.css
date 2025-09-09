@@ -1,0 +1,62 @@
+/* General page styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+/* Input field */
+.key {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.key:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Display for detected key */
+.character {
+  width: 300px;
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional: smooth fade-in when key changes */
+.character {
+  transition: color 0.2s, transform 0.2s;
+}
+
+.character:empty {
+  color: #aaa;
+}

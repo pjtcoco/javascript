@@ -1,0 +1,56 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(135deg, #f9f9f9, #ececec);
+  color: #333;
+}
+
+/* Button styling */
+.lucky-number {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lucky-number:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.lucky-number:active {
+  transform: scale(0.95);
+}
+
+/* Random numbers display */
+.random-numbers {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: #222;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  text-align: center;
+}
