@@ -67,6 +67,12 @@ const restaurant = {
   },
 };
 
+// SPREAD, because on right side of operator (=)
+const arr = [1, 2, ...[3, 4]];
+
+/*
+// The Spread Operator (...)
+
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArray);
@@ -111,6 +117,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Coco Pie';
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+*/
 
 // // Destructuring Objects
 // restaurant.orderDelivery({
