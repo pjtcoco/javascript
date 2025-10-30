@@ -575,7 +575,6 @@ console.log(bookMap.size);
 
 // 13.5
 if (bookMap.has('author')) console.log('The author is known');
-*/
 
 // 14.1
 const firstBookMap = new Map(Object.entries(books[0]));
@@ -586,6 +585,60 @@ for (const [key, value] of firstBookMap) {
   if (typeof value === 'number') console.log(key);
 }
 
+// 15.1
+console.log(
+  books[0].ISBN[6] + books[0].ISBN[4] + books[0].ISBN[9] + books[0].ISBN[8]
+);
+
+// 15.2
+const quote =
+'A computer once beat me at chess, but it was no match for me at kick boxing';
+
+console.log(quote.split(' ').slice(6, 7));
+console.log(quote.indexOf('chess'));
+
+// 15.3
+console.log(...quote.split(' ').slice(-1));
+console.log(quote.slice(quote.lastIndexOf(' ') + 1));
+
+// 15.4
+const isContributorAll = function () {
+  for (const book of books) {
+    console.log(book.author.includes('(Contributor)'));
+  }
+};
+isContributorAll();
+
+const isContributor = function (author) {
+  console.log(author.includes('(Contributor)'));
+};
+
+function isContributor1(author) {
+  return author.lastIndexOf('(Contributor)') !== -1;
+}
+
+isContributor('Julie Sussman (Contributor)');
+isContributor('Robert Sedgewick');
+
+isContributor1('Julie Sussman (Contributor)');
+isContributor1('Robert Sedgewick');
+*/
+
+// 15.1
+
+function normalizeAuthorName(author) {
+  const lowerCase = author
+    .replace('(Contributor)', '')
+    .trim()
+    .toLowerCase()
+    .split(' ');
+  const firstName = lowerCase[0][0].toUpperCase() + lowerCase[0].slice(1) + ' ';
+  const lastName = lowerCase[1][0].toUpperCase() + lowerCase[1].slice(1);
+  console.log(firstName + lastName);
+  return firstName + lastName;
+}
+normalizeAuthorName('  JuliE sussMan (Contributor)');
+// .split(' ')
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
