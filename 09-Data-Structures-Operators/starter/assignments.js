@@ -622,9 +622,8 @@ isContributor('Robert Sedgewick');
 
 isContributor1('Julie Sussman (Contributor)');
 isContributor1('Robert Sedgewick');
-*/
 
-// 15.1
+// 16.1
 
 function normalizeAuthorName(author) {
   const lowerCase = author
@@ -632,13 +631,99 @@ function normalizeAuthorName(author) {
     .trim()
     .toLowerCase()
     .split(' ');
-  const firstName = lowerCase[0][0].toUpperCase() + lowerCase[0].slice(1) + ' ';
-  const lastName = lowerCase[1][0].toUpperCase() + lowerCase[1].slice(1);
-  console.log(firstName + lastName);
-  return firstName + lastName;
-}
-normalizeAuthorName('  JuliE sussMan (Contributor)');
-// .split(' ')
+    const firstName = lowerCase[0][0].toUpperCase() + lowerCase[0].slice(1) + ' ';
+    const lastName = lowerCase[1][0].toUpperCase() + lowerCase[1].slice(1);
+    console.log(firstName + lastName);
+    return firstName + lastName;
+  }
+  normalizeAuthorName('  JuliE sussMan (Contributor)');
+  
+  // 16.2
+  const newBookTitle = books[1].title.replace('Programs', 'Software');
+  console.log(newBookTitle);
+  
+  // 16.3
+  function logBookTheme(title) {
+    const lower = title.toLowerCase();
+    if (lower.startsWith('computer')) {
+      console.log(`This book is about computers`);
+    } else if (lower.includes('algorithms') && lower.includes('structures')) {
+      console.log(`This book is about algorithms and data structures`);
+    } else if (
+      (lower.endsWith('system') || lower.endsWith('systems')) &&
+      !lower.includes('operating')
+    ) {
+      console.log(
+        `This book is about some systems, but definitely not about operating systems`
+      );
+    }
+  }
+  function testBooks(callback) {
+    const titles = [
+      'Computer Networks',
+      'Data Structures and Algorithms',
+      'Distributed Systems',
+      'Operating System',
+      'Control Systems',
+    ];
+    
+    for (const title of titles) {
+      console.log(`\nTesting: "${title}"`);
+      callback(title); // 👈 this is the callback in action
+    }
+  }
+  
+  // 🧪 Run the test
+  testBooks(logBookTheme);
+  
+  // 17.1
+  const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+  const logBookCategories = function (bookCategories) {
+    console.log(bookCategories.replaceAll(';', '\n'));
+  };
+  logBookCategories(bookCategories);
+  
+  const logBookCategories1 = function (str) {
+    const categories = str.split(';');
+    for (const category of categories) {
+      console.log(category);
+    }
+  };
+  logBookCategories1(bookCategories);
+  
+  // 17.2
+  const getKeywordsAsString = function (books) {
+    const merged = [];
+    for (const book of books) {
+      for (const keyword of book.keywords) {
+        merged.push(keyword);
+      }
+    }
+    const noDuplicate = [...new Set(merged)];
+    console.log(noDuplicate.join('; '));
+  };
+  getKeywordsAsString(books);
+  */
+
+// 17.3
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+
+const logBookChapters = function (bookChapters) {
+  for (const chapter of bookChapters) {
+    const title = chapter[0];
+    const page = chapter[1];
+    console.log(title.padEnd(20, '_') + page);
+  }
+};
+logBookChapters(bookChapters);
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
