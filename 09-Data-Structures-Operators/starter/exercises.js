@@ -94,3 +94,56 @@ console.log(hours);
 //   },
 // };
 // console.log(hours);
+
+// 10.
+const menu1 = {
+  starter: 'Salad',
+  main: 'Steak',
+  dessert: 'Cake',
+};
+
+for (const [name, food] of Object.entries(menu1)) {
+  console.log(`(${name}: ${food})`);
+}
+
+// 11.
+const attendees = ['Alice', 'Bob', 'Alice', 'Eve', 'Bob'];
+const normalized = new Set(attendees);
+console.log(`there are ${normalized.size} attendees:`, ...normalized);
+
+// 12.
+const rates = new Map([
+  ['USD', 1],
+  ['EUR', 0.9],
+  ['GBP', 0.8],
+]);
+rates.set('');
+for (const [amount, from, to] of rates) {
+  console.log();
+}
+// const amount;
+// convert(100, 'USD', 'EUR'); // 90
+
+// 13.
+
+// 14.
+const input = ' Hello World! ';
+console.log(input.trim().toLowerCase().replace('!', '.'));
+
+// 15.
+const name1 = 'john-doe-smith';
+rearranged = name1.split('-');
+console.log(
+  rearranged[0][0].toUpperCase() +
+    rearranged[0].slice(1) +
+    ' ' +
+    rearranged[1][0].toUpperCase() +
+    rearranged[1].slice(1) +
+    ' ' +
+    rearranged[2][0].toUpperCase() +
+    rearranged[2].slice(1)
+);
+
+// 16.
+const email = 'user@example.com';
+console.log(email.split('@')[1]);
