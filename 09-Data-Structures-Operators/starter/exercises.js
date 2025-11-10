@@ -147,3 +147,24 @@ console.log(
 // 16.
 const email = 'user@example.com';
 console.log(email.split('@')[1]);
+
+// 17.
+function countWords(text) {
+  const wordCounts = new Map();
+  const arr = text.split(' ');
+
+  for (const word of arr) {
+    if (!word) continue;
+    const count = wordCounts.get(word) || 0;
+    wordCounts.set(word, count + 1);
+  }
+  console.log(wordCounts);
+}
+countWords('hi hi hello');
+countWords('');
+
+// 18.
+const cart = [25, 15, 30, 10];
+const [variable1, variable2, ...others] = cart;
+const variables = [variable1, variable2];
+console.log(variables, others);
