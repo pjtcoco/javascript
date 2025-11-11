@@ -117,54 +117,96 @@ const rates = new Map([
   ['EUR', 0.9],
   ['GBP', 0.8],
 ]);
-rates.set('');
-for (const [amount, from, to] of rates) {
-  console.log();
+function convert(amount, from, to) {
+  for (let [amount, from, to] of rates) {
+    to = amount * rates.get[1];
+  }
+  console.log(to);
 }
-// const amount;
-// convert(100, 'USD', 'EUR'); // 90
+convert(100, 'USD', 'EUR'); // 90
 
 // 13.
 
-// 14.
-const input = ' Hello World! ';
-console.log(input.trim().toLowerCase().replace('!', '.'));
+// // 14.
+// const input = ' Hello World! ';
+// console.log(input.trim().toLowerCase().replace('!', '.'));
 
-// 15.
-const name1 = 'john-doe-smith';
-rearranged = name1.split('-');
-console.log(
-  rearranged[0][0].toUpperCase() +
-    rearranged[0].slice(1) +
-    ' ' +
-    rearranged[1][0].toUpperCase() +
-    rearranged[1].slice(1) +
-    ' ' +
-    rearranged[2][0].toUpperCase() +
-    rearranged[2].slice(1)
-);
+// // 15.
+// const name1 = 'john-doe-smith';
+// rearranged = name1.split('-');
+// console.log(
+//   rearranged[0][0].toUpperCase() +
+//     rearranged[0].slice(1) +
+//     ' ' +
+//     rearranged[1][0].toUpperCase() +
+//     rearranged[1].slice(1) +
+//     ' ' +
+//     rearranged[2][0].toUpperCase() +
+//     rearranged[2].slice(1)
+// );
 
-// 16.
-const email = 'user@example.com';
-console.log(email.split('@')[1]);
+// // 16.
+// const email = 'user@example.com';
+// console.log(email.split('@')[1]);
 
-// 17.
-function countWords(text) {
-  const wordCounts = new Map();
-  const arr = text.split(' ');
+// // 17.
+// function countWords(text) {
+//   const wordCounts = new Map();
+//   const arr = text.split(' ');
 
-  for (const word of arr) {
-    if (!word) continue;
-    const count = wordCounts.get(word) || 0;
-    wordCounts.set(word, count + 1);
-  }
-  console.log(wordCounts);
-}
-countWords('hi hi hello');
-countWords('');
+//   for (const word of arr) {
+//     if (!word) continue;
+//     const count = wordCounts.get(word) || 0;
+//     wordCounts.set(word, count + 1);
+//   }
+//   console.log(wordCounts);
+// }
+// countWords('hi hi hello');
+// countWords('');
 
-// 18.
-const cart = [25, 15, 30, 10];
-const [variable1, variable2, ...others] = cart;
-const variables = [variable1, variable2];
-console.log(variables, others);
+// // 18.
+// const cart = [25, 15, 30, 10];
+// const [variable1, variable2, ...others] = cart;
+// const variables = [variable1, variable2];
+// console.log(variables, others);
+
+// function addition(...numbers) {
+//   let sum = 0;
+
+//   for (const number of numbers) {
+//     sum += number;
+//   }
+//   console.log(sum);
+// }
+// addition(...others);
+
+// // 19.
+// const basic = { name: 'Alice', age: 25 };
+// const extra = { city: 'Berlin', job: 'Engineer' };
+// const profile = { ...basic, ...extra };
+// console.log(
+//   'Profile:',
+//   profile,
+//   `\n`,
+//   profile.hobbies?.length || `Hobbies property not found in Profile`
+// );
+
+// // 20.
+// const products = [
+//   { name: 'Laptop', price: 1200 },
+//   { name: 'Phone', price: 800 },
+//   { name: 'Tablet', price: 600 },
+// ];
+// const newProduct = new Map();
+
+// for (const { name, price } of products) {
+//   newProduct.set(name, price);
+// }
+// console.log(newProduct);
+
+// function getPrice(productName) {
+//   if (newProduct.has(productName)) {
+//     console.log(`The ${productName} costs ${newProduct.get(productName)}EUR`);
+//   } else `Product not found `;
+// }
+// getPrice('Laptop');
