@@ -118,14 +118,19 @@ const rates = new Map([
   ['GBP', 0.8],
 ]);
 function convert(amount, from, to) {
-  for (let [amount, from, to] of rates) {
-    to = amount * rates.get[1];
-  }
-  console.log(to);
+  const rateFrom = rates.get(from);
+  const rateTo = rates.get(to);
+  const totalAmount = (amount / rateFrom) * rateTo;
+  console.log(totalAmount);
 }
 convert(100, 'USD', 'EUR'); // 90
+convert(200, 'EUR', 'USD');
+convert(70, 'USD', 'GBP');
 
 // 13.
+for (let [currency, rate] of rates) {
+  console.log(` ${currency} = ${rate} `);
+}
 
 // // 14.
 // const input = ' Hello World! ';
