@@ -69,7 +69,7 @@ const user = {
     city: 'Hamburg',
   },
 };
-console.log(user.address?.street ?? `Street not Available`);
+console.log(user?.address?.street ?? `Street not Available`);
 
 // 9.
 const days = ['mon', 'tue', 'wed'];
@@ -132,13 +132,13 @@ for (let [currency, rate] of rates) {
   console.log(` ${currency} = ${rate} `);
 }
 
-// // 14.
-// const input = ' Hello World! ';
-// console.log(input.trim().toLowerCase().replace('!', '.'));
+// 14.
+const input = ' Hello World! ';
+console.log(input.trim().toLowerCase().replace('!', '.'));
 
-// // 15.
-// const name1 = 'john-doe-smith';
-// rearranged = name1.split('-');
+// 15.
+const name1 = 'john-doe-smith';
+const rearranged = name1.split('-');
 // console.log(
 //   rearranged[0][0].toUpperCase() +
 //     rearranged[0].slice(1) +
@@ -150,68 +150,68 @@ for (let [currency, rate] of rates) {
 //     rearranged[2].slice(1)
 // );
 
-// // 16.
-// const email = 'user@example.com';
-// console.log(email.split('@')[1]);
+// 16.
+const email = 'user@example.com';
+console.log(email.split('@')[1]);
 
-// // 17.
-// function countWords(text) {
-//   const wordCounts = new Map();
-//   const arr = text.split(' ');
+// 17.
+function countWords(text) {
+  const wordCounts = new Map();
+  const arr = text.split(' ');
 
-//   for (const word of arr) {
-//     if (!word) continue;
-//     const count = wordCounts.get(word) || 0;
-//     wordCounts.set(word, count + 1);
-//   }
-//   console.log(wordCounts);
-// }
-// countWords('hi hi hello');
-// countWords('');
+  for (const word of arr) {
+    if (!word) continue;
+    const count = wordCounts.get(word) || 0;
+    wordCounts.set(word, count + 1);
+  }
+  console.log(wordCounts);
+}
+countWords('hi hi hello');
+countWords('');
 
-// // 18.
-// const cart = [25, 15, 30, 10];
-// const [variable1, variable2, ...others] = cart;
-// const variables = [variable1, variable2];
-// console.log(variables, others);
+// 18.
+const cart = [25, 15, 30, 10];
+const [variable1, variable2, ...others] = cart;
+const variables = [variable1, variable2];
+console.log(variables, others);
 
-// function addition(...numbers) {
-//   let sum = 0;
+function addition(...numbers) {
+  let sum = 0;
 
-//   for (const number of numbers) {
-//     sum += number;
-//   }
-//   console.log(sum);
-// }
-// addition(...others);
+  for (const number of numbers) {
+    sum += number;
+  }
+  console.log(sum);
+}
+addition(...others);
 
-// // 19.
-// const basic = { name: 'Alice', age: 25 };
-// const extra = { city: 'Berlin', job: 'Engineer' };
-// const profile = { ...basic, ...extra };
-// console.log(
-//   'Profile:',
-//   profile,
-//   `\n`,
-//   profile.hobbies?.length || `Hobbies property not found in Profile`
-// );
+// 19.
+const basic = { name: 'Alice', age: 25 };
+const extra = { city: 'Berlin', job: 'Engineer' };
+const profile = { ...basic, ...extra };
+console.log(
+  'Profile:',
+  profile,
+  `\n`,
+  profile?.hobbies?.length || `Hobbies property not found in Profile`
+);
 
-// // 20.
-// const products = [
-//   { name: 'Laptop', price: 1200 },
-//   { name: 'Phone', price: 800 },
-//   { name: 'Tablet', price: 600 },
-// ];
-// const newProduct = new Map();
+// 20.
+const products = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Phone', price: 800 },
+  { name: 'Tablet', price: 600 },
+];
+const newProduct = new Map();
 
-// for (const { name, price } of products) {
-//   newProduct.set(name, price);
-// }
-// console.log(newProduct);
+for (const { name, price } of products) {
+  newProduct.set(name, price);
+}
+console.log(newProduct);
 
-// function getPrice(productName) {
-//   if (newProduct.has(productName)) {
-//     console.log(`The ${productName} costs ${newProduct.get(productName)}EUR`);
-//   } else `Product not found `;
-// }
-// getPrice('Laptop');
+function getPrice(productName) {
+  if (newProduct.has(productName)) {
+    console.log(`The ${productName} costs ${newProduct.get(productName)}EUR`);
+  } else `Product not found `;
+}
+getPrice('Laptop');
