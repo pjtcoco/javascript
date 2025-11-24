@@ -84,30 +84,29 @@ greeterHey('Corine');
 greeterHey('Leslie');
 
 greet('Hello')('Corine');
-*/
 
 const lufthansa = {
-  airline: 'Lufthansa',
-  iatCode: 'LH',
-  bookings: [],
-  // book: function(){}
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${(this, this.airline)} flight ${
-        this.iatCode
-      }${flightNum}`
-    );
-    this.bookings.push({ flight: `${this.iatCode}${flightNum}`, name });
-  },
+    airline: 'Lufthansa',
+    iatCode: 'LH',
+    bookings: [],
+    // book: function(){}
+    book(flightNum, name) {
+        console.log(
+            `${name} booked a seat on ${(this, this.airline)} flight ${
+                this.iatCode
+            }${flightNum}`
+        );
+        this.bookings.push({ flight: `${this.iatCode}${flightNum}`, name });
+    },
 };
 lufthansa.book(239, 'Corine Leslie');
 lufthansa.book(635, 'Zone Meli');
 console.log(lufthansa);
 
 const eurowings = {
-  airline: 'Eurowings',
-  iatCode: 'EW',
-  bookings: [],
+    airline: 'Eurowings',
+    iatCode: 'EW',
+    bookings: [],
 };
 const book = lufthansa.book;
 
@@ -121,9 +120,9 @@ console.log(eurowings);
 book.call(lufthansa, 239, 'Frank Jordan');
 
 const swiss = {
-  airline: 'Swiss Air Lines',
-  iatCode: 'LX',
-  bookings: [],
+    airline: 'Swiss Air Lines',
+    iatCode: 'LX',
+    bookings: [],
 };
 
 book.call(swiss, 239, 'Kenne Roic');
@@ -153,15 +152,15 @@ bookEW23('Marie Noelle');
 // With Event Listeners
 lufthansa.planes = 300;
 lufthansa.buyPlane = function () {
-  console.log(this);
-
-  this.planes++;
-  console.log(this.planes);
+    console.log(this);
+    
+    this.planes++;
+    console.log(this.planes);
 };
 // lufthansa.buyPlane();
 document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+.querySelector('.buy')
+.addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 //   Partial Application
 const addTax = (rate, value) => value + value * rate;
@@ -174,10 +173,12 @@ console.log(addVAT(100));
 console.log(addVAT(23));
 
 const addTax1 = function (rate) {
-  return function (value) {
-    return value + value * rate;
-  };
+    return function (value) {
+        return value + value * rate;
+    };
 };
 const addVAT1 = addTax1(0.23);
 console.log(addVAT1(100));
 console.log(addVAT1(23));
+
+*/
